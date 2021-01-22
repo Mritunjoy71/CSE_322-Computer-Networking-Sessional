@@ -1,0 +1,205 @@
+-----  Stop and Wait Network Simulator Version 1.1 -------- 
+
+Enter the number of messages to simulate: 10
+Enter  packet loss probability [enter 0.0 for no loss]:0.1
+Enter packet corruption probability [0.0 for no corruption]:0.3
+Enter average time between messages from sender's layer5 [ > 0.0]:1000
+Enter TRACE:2
+In A_init
+In B_init
+
+EVENT time: 1870.573975,  type: 1, fromlayer5  entity: 0
+In A_output...Sending packet to tolayer3
+In A_output...starting timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 1876.039062,  type: 2, fromlayer3  entity: 1
+In B_input...checksum error...sending NAK packet to tolayer3
+In B_input...sending reply packet to tolayer3
+
+EVENT time: 1878.220703,  type: 2, fromlayer3  entity: 0
+In A_input...got NAK & sending packet to tolayer3 again
+In A_input...starting timer
+
+EVENT time: 1880.241211,  type: 2, fromlayer3  entity: 1
+In B_input...Packet is received successfully...sending message  to tolayer5   sending ack
+In B_input...sending reply packet to tolayer3
+          TOLAYER3: packet being corrupted
+
+EVENT time: 1884.708496,  type: 2, fromlayer3  entity: 0
+In A_input...got ACK 	1 packets acknowledged
+
+EVENT time: 3512.483887,  type: 1, fromlayer5  entity: 0
+In A_output...Sending packet to tolayer3
+In A_output...starting timer
+
+EVENT time: 3521.912354,  type: 2, fromlayer3  entity: 1
+In B_input...Packet is received successfully...sending message  to tolayer5   sending ack
+In B_input...sending reply packet to tolayer3
+
+EVENT time: 3529.375244,  type: 2, fromlayer3  entity: 0
+In A_input...got ACK 	2 packets acknowledged
+
+EVENT time: 3618.799316,  type: 1, fromlayer5  entity: 0
+In A_output...Sending packet to tolayer3
+In A_output...starting timer
+
+EVENT time: 3621.529541,  type: 2, fromlayer3  entity: 1
+In B_input...Packet is received successfully...sending message  to tolayer5   sending ack
+In B_input...sending reply packet to tolayer3
+          TOLAYER3: packet being corrupted
+
+EVENT time: 3623.895996,  type: 2, fromlayer3  entity: 0
+In A_input...got ACK 	3 packets acknowledged
+
+EVENT time: 4736.499023,  type: 1, fromlayer5  entity: 0
+In A_output...Sending packet to tolayer3
+In A_output...starting timer
+          TOLAYER3: packet being lost
+
+EVENT time: 4756.499023,  type: 0, timerinterrupt   entity: 0
+In A_timerinterrupt...sending packet to tolayer3
+In A_timerinterrupt...starting timer
+
+EVENT time: 4762.748047,  type: 2, fromlayer3  entity: 1
+In B_input...Packet is received successfully...sending message  to tolayer5   sending ack
+In B_input...sending reply packet to tolayer3
+
+EVENT time: 4764.228516,  type: 2, fromlayer3  entity: 0
+In A_input...got ACK 	4 packets acknowledged
+
+EVENT time: 4910.704102,  type: 1, fromlayer5  entity: 0
+In A_output...Sending packet to tolayer3
+In A_output...starting timer
+
+EVENT time: 4917.064941,  type: 2, fromlayer3  entity: 1
+In B_input...Packet is received successfully...sending message  to tolayer5   sending ack
+In B_input...sending reply packet to tolayer3
+          TOLAYER3: packet being lost
+
+EVENT time: 4930.704102,  type: 0, timerinterrupt   entity: 0
+In A_timerinterrupt...sending packet to tolayer3
+In A_timerinterrupt...starting timer
+
+EVENT time: 4931.762695,  type: 2, fromlayer3  entity: 1
+In B_input...sending reply packet to tolayer3
+          TOLAYER3: packet being lost
+
+EVENT time: 4950.704102,  type: 0, timerinterrupt   entity: 0
+In A_timerinterrupt...sending packet to tolayer3
+In A_timerinterrupt...starting timer
+
+EVENT time: 4955.978027,  type: 2, fromlayer3  entity: 1
+In B_input...sending reply packet to tolayer3
+          TOLAYER3: packet being lost
+
+EVENT time: 4970.704102,  type: 0, timerinterrupt   entity: 0
+In A_timerinterrupt...sending packet to tolayer3
+In A_timerinterrupt...starting timer
+
+EVENT time: 4979.485352,  type: 2, fromlayer3  entity: 1
+In B_input...sending reply packet to tolayer3
+          TOLAYER3: packet being lost
+
+EVENT time: 4990.704102,  type: 0, timerinterrupt   entity: 0
+In A_timerinterrupt...sending packet to tolayer3
+In A_timerinterrupt...starting timer
+          TOLAYER3: packet being lost
+
+EVENT time: 5010.704102,  type: 0, timerinterrupt   entity: 0
+In A_timerinterrupt...sending packet to tolayer3
+In A_timerinterrupt...starting timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 5015.523438,  type: 2, fromlayer3  entity: 1
+In B_input...sending reply packet to tolayer3
+
+EVENT time: 5019.185059,  type: 2, fromlayer3  entity: 0
+In A_input...got ACK 	5 packets acknowledged
+
+EVENT time: 5985.808594,  type: 1, fromlayer5  entity: 0
+In A_output...Sending packet to tolayer3
+In A_output...starting timer
+
+EVENT time: 5987.085938,  type: 2, fromlayer3  entity: 1
+In B_input...Packet is received successfully...sending message  to tolayer5   sending ack
+In B_input...sending reply packet to tolayer3
+          TOLAYER3: packet being corrupted
+
+EVENT time: 5992.703613,  type: 2, fromlayer3  entity: 0
+In A_input...got ACK 	6 packets acknowledged
+
+EVENT time: 7815.311523,  type: 1, fromlayer5  entity: 0
+In A_output...Sending packet to tolayer3
+In A_output...starting timer
+          TOLAYER3: packet being corrupted
+
+EVENT time: 7818.208984,  type: 2, fromlayer3  entity: 1
+In B_input...checksum error...sending NAK packet to tolayer3
+In B_input...sending reply packet to tolayer3
+
+EVENT time: 7820.321777,  type: 2, fromlayer3  entity: 0
+In A_input...got NAK & sending packet to tolayer3 again
+In A_input...starting timer
+
+EVENT time: 7827.013184,  type: 2, fromlayer3  entity: 1
+In B_input...Packet is received successfully...sending message  to tolayer5   sending ack
+In B_input...sending reply packet to tolayer3
+          TOLAYER3: packet being corrupted
+
+EVENT time: 7832.485840,  type: 2, fromlayer3  entity: 0
+In A_input...got ACK 	7 packets acknowledged
+
+EVENT time: 8032.727539,  type: 1, fromlayer5  entity: 0
+In A_output...Sending packet to tolayer3
+In A_output...starting timer
+
+EVENT time: 8042.056641,  type: 2, fromlayer3  entity: 1
+In B_input...Packet is received successfully...sending message  to tolayer5   sending ack
+In B_input...sending reply packet to tolayer3
+          TOLAYER3: packet being lost
+
+EVENT time: 8052.727539,  type: 0, timerinterrupt   entity: 0
+In A_timerinterrupt...sending packet to tolayer3
+In A_timerinterrupt...starting timer
+
+EVENT time: 8054.251465,  type: 2, fromlayer3  entity: 1
+In B_input...sending reply packet to tolayer3
+
+EVENT time: 8063.686035,  type: 2, fromlayer3  entity: 0
+In A_input...got ACK 	8 packets acknowledged
+
+EVENT time: 9140.305664,  type: 1, fromlayer5  entity: 0
+In A_output...Sending packet to tolayer3
+In A_output...starting timer
+
+EVENT time: 9144.023438,  type: 2, fromlayer3  entity: 1
+In B_input...Packet is received successfully...sending message  to tolayer5   sending ack
+In B_input...sending reply packet to tolayer3
+
+EVENT time: 9148.719727,  type: 2, fromlayer3  entity: 0
+In A_input...got ACK 	9 packets acknowledged
+
+EVENT time: 9894.185547,  type: 1, fromlayer5  entity: 0
+In A_output...Sending packet to tolayer3
+In A_output...starting timer
+
+EVENT time: 9899.688477,  type: 2, fromlayer3  entity: 1
+In B_input...Packet is received successfully...sending message  to tolayer5   sending ack
+In B_input...sending reply packet to tolayer3
+
+EVENT time: 9906.303711,  type: 2, fromlayer3  entity: 0
+In A_input...got ACK 	10 packets acknowledged
+ Simulator terminated at time 9906.303711
+ after sending 10 msgs from layer5
+
+
+Report
+10 packets are sent from layer5 of A
+17 packets are sent from layer3 of A
+17 packets are received from layer3 of B
+10 packets are received in layer5 of B
+17 packets are sent from layer3 of B
+12 packets are received from layer3 of A
+10 packets are acked
+

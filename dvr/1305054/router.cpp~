@@ -1,0 +1,644 @@
+//#include<bits/stdc++.h>
+#include <iostream>
+#include <fstream>
+#include <cstdio>
+#include <cstring>
+#include <cstdlib>
+#include <vector>
+#include <string.h>
+#include <string>
+
+
+#include <arpa/inet.h>
+#include <sys/socket.h>
+#include <unistd.h>
+
+using namespace std;
+
+int rno=0;
+struct node{
+string dst;
+string nxt;
+//string cost;
+int cost;
+
+};
+struct r{
+string ip;
+vector<node> lists;
+vector<string> neigh;
+vector<node> concost;
+
+};
+int n=4;
+r router[12];
+r newtable[4];
+
+void r_create(string current)
+{
+vector<node> t;
+ifstream input;
+string frst;
+string scnd;
+//string cst;
+int cst;
+vector<string> extra;
+vector<string> neigh;
+node temp;
+input.open("topo.txt");
+temp.dst=current;
+temp.nxt="";
+//temp.cost="0";
+temp.cost=0;
+t.push_back(temp);
+while(!input.eof())
+{
+input>>frst;
+input>>scnd;
+input>>cst;
+if(current==frst)
+{
+temp.dst=scnd;
+temp.nxt=scnd;
+temp.cost=cst;
+neigh.push_back(scnd);
+t.push_back(temp);
+
+}
+
+else if(current==scnd)
+{
+
+temp.dst=frst;
+temp.nxt=frst;
+temp.cost=cst;
+neigh.push_back(frst);
+t.push_back(temp);
+
+}
+else
+{
+extra.push_back(frst);
+extra.push_back(scnd);
+
+}
+
+}
+for(int i=0;i<(int)extra.size();i++)
+{
+bool tst=false;
+for(int j=0;j<(int)neigh.size();j++)
+{
+if(extra[i]==neigh[j])
+{
+tst=true;
+}
+
+}
+if(!tst)
+{
+bool tst2=false;
+for(int j=0;j<(int)t.size();j++)
+{
+if(extra[i]==t[j].dst)
+{
+tst2=true;
+}
+
+}
+if(!tst2)
+{
+temp.dst=extra[i];
+temp.nxt="";
+//temp.cost="100000";
+temp.cost=-1;
+t.push_back(temp);
+}
+
+}
+}
+router[rno].ip=current;
+router[rno].lists=t;
+router[rno].concost=t;
+router[rno].neigh=neigh;
+rno++;
+}
+string to_string(int n){
+    string ret="";
+    do{
+        int temp = n%10;
+        n/=10;
+        char ch =temp+'0';
+        ret = ch + ret;
+    }while(n);
+
+    return ret;
+}
+
+
+string tostring(unsigned char c[]){
+    int a;
+
+
+    string ip="";
+    for(int i=0;i<4;i++){
+        a = (int)c[i];
+       string s=to_string(a);
+      //  char *intStr=itoa(a);
+      // string s=string(intStr);;
+        ip=ip+s;
+        if(i<3) ip+=".";
+    }
+    return ip;
+}
+string tostringcost(unsigned char c[]){
+    int a;
+
+
+    string ip="";
+    for(int i=0;i<1;i++){
+        a = (int)c[i];
+       string s=to_string(a);
+      //  char *intStr=itoa(a);
+      // string s=string(intStr);;
+        ip=ip+s;
+      //  if(i<3) ip+=".";
+    }
+    return ip;
+}
+
+void print(string tmp)
+{
+int j=0;
+
+cout<<"router : "<<" "<<router[j].ip<<endl;
+cout<<"Destination"<<"  "<<" Next Hop "<<"  "<<" Cost "<<endl;
+
+for(int i=0;i<(int)router[j].lists.size();i++)
+{
+if(router[j].lists[i].nxt=="")
+{
+cout<<router[j].lists[i].dst<<"                "<<router[j].lists[i].cost<<endl;
+}
+else
+{cout<<router[j].lists[i].dst<<"  "<<router[j].lists[i].nxt<<"  "<<router[j].lists[i].cost<<endl;
+}
+}
+cout<<"neigbours : "<<" "<<endl;
+for(int k=0;k<router[j].neigh.size();k++){
+cout<<router[j].neigh[k]<<"  ";
+}
+cout<<endl;
+
+}
+
+void print2()
+{
+int j=0;
+
+cout<<"router : "<<" "<<newtable[0].lists[0].dst<<endl;
+cout<<"Destination"<<"  "<<" Next Hop "<<"  "<<" Cost "<<endl;
+
+for(int i=0;i<(int)newtable[0].lists.size();i++)
+{
+if(newtable[0].lists[i].nxt=="")
+{
+cout<<newtable[0].lists[i].dst<<"                "<<newtable[0].lists[i].cost<<endl;
+}
+else
+{cout<<newtable[0].lists[i].dst<<"  "<<newtable[0].lists[i].nxt<<"  "<<newtable[0].lists[i].cost<<endl;
+}
+}
+
+cout<<endl;
+
+}
+
+int main(int argc, char *argv[])
+{
+
+
+string ip=argv[1];
+r_create(ip);
+print(ip);
+//socketting
+
+int sockfd;
+	int bind_flag;
+	int bytes_received;
+	socklen_t addrlen;
+	char buffer[1024];
+	char tbuffer[1024];
+	struct sockaddr_in sender_address;
+    struct sockaddr_in recver_address;
+
+
+
+
+	sender_address.sin_family = AF_INET;
+	sender_address.sin_port = htons(4747);
+	inet_pton(AF_INET,ip.c_str(), &sender_address.sin_addr);
+
+	sockfd = socket(AF_INET, SOCK_DGRAM, 0);
+
+	bind_flag = bind(sockfd, (struct sockaddr*) &sender_address, sizeof(sockaddr_in));
+
+	if(bind_flag==0)printf("successful bind\n");
+
+
+
+
+
+	while(true){
+        memset(buffer,0,sizeof(buffer));
+		bytes_received = recvfrom(sockfd, buffer, 1024, 0, (struct sockaddr*) &recver_address, &addrlen);
+   //     cout<<buffer[0]<<buffer[1]<<buffer[2]<<buffer[3]<<endl;
+        string ip1;
+        string ip2;
+       // string ncost;
+       int ncost;int length;
+        unsigned char c[4],temp1;
+         if(buffer[0]=='m' && buffer[1]=='g')
+         {
+         string packet="";
+        temp1=buffer[2];
+        length=(int)temp1;
+
+          for(int i=0;i<4;i++)
+        {
+
+        c[i]=buffer[3+i];
+
+        }
+        ip2=tostring(c);
+        memset(tbuffer,0,sizeof(tbuffer));
+
+
+        if(ip2==ip)
+        {
+        for(int i=0;i<length;i++)
+        {
+         cout<<buffer[7+i];
+      //  cout<<buffer[7+i]<<"";
+        }
+        cout<<" packet reached destination"<<endl;
+        }
+        else
+        {
+        string nexttrgt;
+        for(int i=1;i<(int)router[0].lists.size();i++)
+        {
+        if(ip2==router[0].lists[i].dst){nexttrgt=router[0].lists[i].nxt;
+       // cout<<"in msg"<<i<<nexttrgt<<endl;
+        break;
+        }
+
+        }
+        for(int i=0;i<length;i++)
+        {
+         cout<<buffer[7+i];
+      //  cout<<buffer[7+i]<<"";
+        }
+        //print(ip);
+        cout<<" packet forwarded to "<<nexttrgt<<endl;
+        struct sockaddr_in receiver;
+            receiver.sin_family = AF_INET;
+            receiver.sin_port = htons(4747);
+            receiver.sin_addr.s_addr = inet_addr(nexttrgt.c_str());
+            inet_pton(AF_INET,nexttrgt.c_str(),&receiver.sin_addr);
+            sendto(sockfd,buffer,1024,0,(struct sockaddr*) &receiver,sizeof(sockaddr_in));
+
+        }
+
+         }
+         else if(buffer[0]=='n' && buffer[1]=='t')
+         {
+        while (!newtable[0].lists.empty())
+          {
+
+              newtable[0].lists.pop_back();
+                 }
+
+      //   cout<<buffer[0]<<buffer[1]<<endl;
+        int kk=2;
+        node tempnode;
+        for(int k=0;k<4;k++)
+     {
+
+          for(int i=0;i<4;i++)
+        {
+
+        c[i]=buffer[kk+i];
+
+        }
+        ip1=tostring(c);
+        tempnode.dst=ip1;
+     //   cout<<ip1<<" ";
+         for(int i=0;i<4;i++)
+        {
+
+        c[i]=buffer[kk+4+i];
+
+        }
+        ip2=tostring(c);
+       tempnode.nxt=ip2;
+      //  cout<<ip2<<" ";
+  /*      for(int i=0;i<1;i++)
+        {
+
+        c[i]=buffer[12+i];
+
+        }
+*/
+        unsigned char cc=buffer[kk+8];
+        //ncost=tostringcost(c);
+        ncost=(int) cc;
+        if(ncost==255)ncost=-1;
+      tempnode.cost=ncost;
+      newtable[0].lists.push_back(tempnode);
+      //  cout<<ncost<<endl;
+        kk=kk+9;
+
+         }
+      //   print2();
+
+         //dvr
+        //    cout<<"newtable"<<endl;
+         //   print2();
+
+         for(int i=1;i<(int)router[0].lists.size();i++)
+            {
+
+
+            string nxthopzy;
+            string y=router[0].lists[i].dst;
+            if(router[0].lists[i].cost==-1){router[0].lists[i].cost=10000;}
+            int dxy=router[0].lists[i].cost;
+            int cxz;
+            int dzy;
+            int d;
+            for(int j=1;j<(int)router[0].lists.size();j++)
+            {
+            if(router[0].lists[j].dst==newtable[0].lists[0].dst)
+            {
+            if(router[0].concost[j].cost==-1){router[0].concost[j].cost=10000;}
+
+            cxz=router[0].concost[j].cost;
+         //   cout<<router[0].lists[0].dst<<"-"<<newtable[0].lists[0].dst<<"="<<cxz<<endl;
+            break;
+            }
+
+            }
+            for(int j=0;j<(int)newtable[0].lists.size();j++)
+            {
+            if(newtable[0].lists[j].dst==y)
+            {
+            nxthopzy=newtable[0].lists[j].nxt;
+            if(newtable[0].lists[j].cost==-1){newtable[0].lists[j].cost=10000;}
+            dzy=newtable[0].lists[j].cost;
+            break;
+            }
+
+            }
+
+            d=cxz+dzy;
+          if((router[0].lists[i].nxt==newtable[0].lists[0].dst)||((d<dxy)&&router[0].lists[0].dst!=nxthopzy))
+           // if(d<dxy)
+            {
+            router[0].lists[i].nxt=newtable[0].lists[0].dst;
+            int tst=router[0].lists[i].cost;
+            router[0].lists[i].cost=d;
+
+
+            }
+    //     cout<<"after update by:"<<newtable[0].lists[0].dst<<"  "<<dxy<<"--->"<<router[0].lists[i].cost<<endl;
+      //   print(ip);
+            }
+
+
+         }
+        if(buffer[0]=='s' && buffer[1]=='h')
+        {
+        for(int i=0;i<4;i++)
+        {
+      //  cout<<buffer[4+i];
+        c[i]=buffer[4+i];
+
+        }
+        ip1=tostring(c);
+        cout<<"show ip of  "<<ip1<<endl;
+        if(ip1==ip)
+        {print(ip1);}
+        }
+        else if(buffer[0]=='c' && buffer[1]=='o')
+        {
+        for(int i=0;i<4;i++)
+        {
+
+        c[i]=buffer[4+i];
+
+        }
+        ip1=tostring(c);
+         for(int i=0;i<4;i++)
+        {
+
+        c[i]=buffer[8+i];
+
+        }
+        ip2=tostring(c);
+  /*      for(int i=0;i<1;i++)
+        {
+
+        c[i]=buffer[12+i];
+
+        }
+*/
+        unsigned char cc=buffer[12];
+        //ncost=tostringcost(c);
+        ncost=(int) cc;
+
+        cout<<ip1<<" "<<ip2<<"  "<<ncost<<endl;
+
+        for(int i=0;i<(int)router[0].concost.size();i++)
+        {
+        if((router[0].concost[i].dst==ip1 && router[0].concost[i].nxt==ip1)|| (router[0].concost[i].dst==ip2 && router[0].concost[i].nxt==ip2))
+
+        {
+        router[0].concost[i].cost=ncost;
+        }
+
+        }
+        //print(ip);
+        }
+        else if(buffer[0]=='s' && buffer[1]=='e')
+        {
+        for(int i=0;i<4;i++)
+        {
+
+        c[i]=buffer[4+i];
+
+        }
+        ip1=tostring(c);
+         for(int i=0;i<4;i++)
+        {
+
+        c[i]=buffer[8+i];
+
+        }
+        ip2=tostring(c);
+        unsigned char cc=buffer[12];
+        ncost=(int) cc;
+        int mlength=ncost;
+        if(ip2==ip)
+        {
+        for(int i=0;i<mlength;i++)
+        {
+         cout<<buffer[14+i];
+      //  cout<<buffer[7+i]<<"";
+        }
+        cout<<" packet reached destination"<<endl;
+        }
+else
+{
+       string nexttrgt;
+        for(int i=1;i<(int)router[0].lists.size();i++)
+        {
+        if(ip2==router[0].lists[i].dst){nexttrgt=router[0].lists[i].nxt;
+       // cout<<i<<" "<<nexttrgt<<endl;
+        break;
+        }
+
+        }
+        cout<<"next target is"<<nexttrgt<<endl;
+        for(int i=0;i<mlength;i++)
+        {
+         cout<<buffer[14+i];
+      //  cout<<buffer[7+i]<<"";
+        }
+        //print(ip);
+        cout<<" packet forwarded to "<<nexttrgt<<endl;
+
+       // cout<<mlength<<endl;
+        string text="";
+       for(int i=0;i<mlength;i++)
+       {
+       text=text+buffer[14+i];
+
+       }
+       memset(buffer,0,sizeof(buffer));
+       buffer[0]='m';
+       buffer[1]='g';
+       unsigned char ccc[1];
+       ccc[0]=mlength;
+
+       buffer[2]=ccc[0];
+       unsigned char cip1[4],ccost;
+          cip1[0]=192;
+          cip1[1]=168;
+          cip1[2]=10;
+          cip1[3]=ip2[ip2.length()-1]-'0';
+       for(int j=0;j<4;j++)
+          {
+          buffer[3+j]=cip1[j];
+
+          }
+
+       for(int i=0;i<mlength;i++)
+       {
+       buffer[7+i]=text[i];
+       }
+       struct sockaddr_in receiver;
+            receiver.sin_family = AF_INET;
+            receiver.sin_port = htons(4747);
+            receiver.sin_addr.s_addr = inet_addr(nexttrgt.c_str());
+            inet_pton(AF_INET,nexttrgt.c_str(),&receiver.sin_addr);
+            sendto(sockfd,buffer,1024,0,(struct sockaddr*) &receiver,sizeof(sockaddr_in));
+
+        }
+
+        }
+        else if(buffer[0]=='c'&& buffer[1]=='l')
+        {
+
+        tbuffer[0]='n';
+        tbuffer[1]='t';
+        int bs=2;
+
+       string text="";
+       for(int i=0;i<(int)router[0].lists.size();i++)
+       {
+          string tempip1=router[0].lists[i].dst;
+          string tempip2=router[0].lists[i].nxt;
+          int tempcost=router[0].lists[i].cost;
+          unsigned char cip1[4],ccost;
+          cip1[0]=192;
+          cip1[1]=168;
+          cip1[2]=10;
+          cip1[3]=tempip1[tempip1.length()-1]-'0';
+            //cout<<"hi";}
+
+          for(int j=0;j<4;j++)
+          {
+          tbuffer[bs+j]=cip1[j];
+
+          }
+
+         bs=bs+4;
+          if(tempip2!="")
+          {
+          cip1[0]=192;
+          cip1[1]=168;
+          cip1[2]=10;
+          cip1[3]=tempip2[tempip2.length()-1]-'0';
+          for(int j=0;j<4;j++)
+          {
+          tbuffer[bs+j]=cip1[j];
+
+          }
+          bs=bs+4;}
+          else if(tempip2=="")
+          {
+          cip1[0]=192;
+          cip1[1]=192;
+          cip1[2]=192;
+          cip1[3]=192;
+          for(int j=0;j<4;j++)
+          {
+          tbuffer[bs+j]=cip1[j];
+
+          }
+          bs=bs+4;
+
+          }
+          cip1[0]=tempcost;
+          tbuffer[bs]=cip1[0];
+          bs=bs+1;
+
+       }
+       memset(buffer,0,sizeof(buffer));
+       for(int i=0;i<=bs;i++)
+       {
+       buffer[i]=tbuffer[i];
+       }
+       for(int i=0;i<(int)router[0].neigh.size();i++)
+       {
+       string trget=router[0].neigh[i];
+       struct sockaddr_in receiver;
+            receiver.sin_family = AF_INET;
+            receiver.sin_port = htons(4747);
+            receiver.sin_addr.s_addr = inet_addr(trget.c_str());
+            inet_pton(AF_INET,ip2.c_str(),&receiver.sin_addr);
+            sendto(sockfd,buffer,1024,0,(struct sockaddr*) &receiver,sizeof(sockaddr_in));
+        }
+
+     //*/
+        }
+
+
+      }
+
+
+return 0;
+
+
+}

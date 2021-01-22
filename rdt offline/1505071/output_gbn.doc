@@ -1,0 +1,1085 @@
+-----  Stop and Wait Network Simulator Version 1.1 -------- 
+
+Enter the number of messages to simulate: 20
+Enter  packet loss probability [enter 0.0 for no loss]:0.2
+Enter packet corruption probability [0.0 for no corruption]:0.2
+Enter average time between messages from sender's layer5 [ > 0.0]:10
+Enter TRACE:2
+
+EVENT time: 18.705740,  type: 1, fromlayer5  entity: 0
+................. Inside  A_output...............
+Send packet to layer3
+.................Outside A_output..............
+
+EVENT time: 24.170835,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Send packet to layer5
+          TOLAYER3: packet being corrupted
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 29.402449,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+ACK packet is corrupted
+1 ACK packet process successfully accomplished
+........Outside A_input........
+
+EVENT time: 35.124840,  type: 1, fromlayer5  entity: 0
+................. Inside  A_output...............
+          TOLAYER3: packet being lost
+Send packet to layer3
+.................Outside A_output..............
+
+EVENT time: 37.680447,  type: 1, fromlayer5  entity: 0
+................. Inside  A_output...............
+          TOLAYER3: packet being corrupted
+Send packet to layer3
+.................Outside A_output..............
+
+EVENT time: 42.147713,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Packet is corrupted
+
+EVENT time: 46.394402,  type: 1, fromlayer5  entity: 0
+................. Inside  A_output...............
+Send packet to layer3
+.................Outside A_output..............
+
+EVENT time: 47.457558,  type: 1, fromlayer5  entity: 0
+................. Inside  A_output...............
+Send packet to layer3
+.................Outside A_output..............
+
+EVENT time: 55.124840,  type: 0, timerinterrupt   entity: 0
+Time interrupt occur
+Timeout! Send out the package again
+Timeout! Send out the package again
+Timeout! Send out the package again
+          TOLAYER3: packet being corrupted
+Timeout! Send out the package again
+
+EVENT time: 55.822826,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Disordered packet received
+          TOLAYER3: packet being lost
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 59.231812,  type: 1, fromlayer5  entity: 0
+................. Inside  A_output...............
+Send packet to layer3
+.................Outside A_output..............
+
+EVENT time: 60.025467,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Disordered packet received
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 61.900661,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+Receive duplicate ACK
+
+EVENT time: 62.755707,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Send packet to layer5
+          TOLAYER3: packet being lost
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 65.122047,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Send packet to layer5
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 66.428436,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+2 ACK packet process successfully accomplished
+........Outside A_input........
+
+EVENT time: 66.905968,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Packet is corrupted
+
+EVENT time: 68.876717,  type: 1, fromlayer5  entity: 0
+................. Inside  A_output...............
+          TOLAYER3: packet being corrupted
+Send packet to layer3
+.................Outside A_output..............
+
+EVENT time: 71.064552,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Disordered packet received
+          TOLAYER3: packet being corrupted
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 72.820229,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+ACK packet is corrupted
+Receive duplicate ACK
+
+EVENT time: 73.695206,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Disordered packet received
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 74.915489,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Packet is corrupted
+
+EVENT time: 76.573044,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+Receive duplicate ACK
+
+EVENT time: 78.374718,  type: 1, fromlayer5  entity: 0
+................. Inside  A_output...............
+Send packet to layer3
+.................Outside A_output..............
+
+EVENT time: 85.493599,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Disordered packet received
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 86.428436,  type: 0, timerinterrupt   entity: 0
+Time interrupt occur
+Timeout! Send out the package again
+          TOLAYER3: packet being corrupted
+Timeout! Send out the package again
+          TOLAYER3: packet being lost
+Timeout! Send out the package again
+          TOLAYER3: packet being lost
+Timeout! Send out the package again
+          TOLAYER3: packet being corrupted
+Timeout! Send out the package again
+          TOLAYER3: packet being lost
+
+EVENT time: 86.771057,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+Receive duplicate ACK
+
+EVENT time: 92.046104,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Packet is corrupted
+
+EVENT time: 93.852440,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Packet is corrupted
+
+EVENT time: 97.032677,  type: 1, fromlayer5  entity: 0
+................. Inside  A_output...............
+Send packet to layer3
+.................Outside A_output..............
+
+EVENT time: 103.724022,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Disordered packet received
+          TOLAYER3: packet being corrupted
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 106.428436,  type: 0, timerinterrupt   entity: 0
+Time interrupt occur
+Timeout! Send out the package again
+Timeout! Send out the package again
+Timeout! Send out the package again
+          TOLAYER3: packet being lost
+Timeout! Send out the package again
+Timeout! Send out the package again
+Timeout! Send out the package again
+
+EVENT time: 108.170799,  type: 1, fromlayer5  entity: 0
+................. Inside  A_output...............
+Send packet to layer3
+.................Outside A_output..............
+
+EVENT time: 109.196625,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+ACK packet is corrupted
+Receive duplicate ACK
+
+EVENT time: 111.815292,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Send packet to layer5
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 113.519531,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Send packet to layer5
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 116.385498,  type: 1, fromlayer5  entity: 0
+................. Inside  A_output...............
+window is full
+
+EVENT time: 121.303474,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+calling A_output to send extra buffer message
+................. Inside  A_output...............
+          TOLAYER3: packet being corrupted
+Send packet to layer3
+.................Outside A_output..............
+3 ACK packet process successfully accomplished
+........Outside A_input........
+
+EVENT time: 121.477394,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Disordered packet received
+          TOLAYER3: packet being corrupted
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 123.808693,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+4 ACK packet process successfully accomplished
+........Outside A_input........
+
+EVENT time: 125.869858,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Disordered packet received
+          TOLAYER3: packet being corrupted
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 129.709656,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+ACK packet is corrupted
+Receive duplicate ACK
+
+EVENT time: 131.534882,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Disordered packet received
+          TOLAYER3: packet being corrupted
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 134.233780,  type: 1, fromlayer5  entity: 0
+................. Inside  A_output...............
+Send packet to layer3
+.................Outside A_output..............
+
+EVENT time: 134.280121,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Disordered packet received
+          TOLAYER3: packet being corrupted
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 138.532776,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+ACK packet is corrupted
+Receive duplicate ACK
+
+EVENT time: 140.116638,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+ACK packet is corrupted
+Receive duplicate ACK
+
+EVENT time: 142.059753,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Packet is corrupted
+
+EVENT time: 142.651962,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+ACK packet is corrupted
+Receive duplicate ACK
+
+EVENT time: 143.808685,  type: 0, timerinterrupt   entity: 0
+Time interrupt occur
+Timeout! Send out the package again
+          TOLAYER3: packet being corrupted
+Timeout! Send out the package again
+          TOLAYER3: packet being corrupted
+Timeout! Send out the package again
+          TOLAYER3: packet being lost
+Timeout! Send out the package again
+          TOLAYER3: packet being lost
+Timeout! Send out the package again
+Timeout! Send out the package again
+Timeout! Send out the package again
+
+EVENT time: 147.898224,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Disordered packet received
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 149.389389,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Packet is corrupted
+
+EVENT time: 152.758789,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Packet is corrupted
+
+EVENT time: 152.922165,  type: 1, fromlayer5  entity: 0
+................. Inside  A_output...............
+window is full
+
+EVENT time: 154.169907,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+Receive duplicate ACK
+
+EVENT time: 156.671555,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Disordered packet received
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 161.049576,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+Receive duplicate ACK
+
+EVENT time: 161.209991,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Disordered packet received
+          TOLAYER3: packet being corrupted
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 161.589371,  type: 1, fromlayer5  entity: 0
+................. Inside  A_output...............
+window is full
+
+EVENT time: 163.808685,  type: 0, timerinterrupt   entity: 0
+Time interrupt occur
+Timeout! Send out the package again
+          TOLAYER3: packet being lost
+Timeout! Send out the package again
+Timeout! Send out the package again
+Timeout! Send out the package again
+Timeout! Send out the package again
+Timeout! Send out the package again
+Timeout! Send out the package again
+          TOLAYER3: packet being lost
+
+EVENT time: 164.531754,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+ACK packet is corrupted
+Receive duplicate ACK
+
+EVENT time: 166.897812,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Disordered packet received
+          TOLAYER3: packet being lost
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 173.728638,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Disordered packet received
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 174.408157,  type: 1, fromlayer5  entity: 0
+................. Inside  A_output...............
+window is full
+
+EVENT time: 180.234024,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+Receive duplicate ACK
+
+EVENT time: 181.106735,  type: 1, fromlayer5  entity: 0
+................. Inside  A_output...............
+window is full
+
+EVENT time: 182.008118,  type: 1, fromlayer5  entity: 0
+................. Inside  A_output...............
+window is full
+
+EVENT time: 182.928879,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Disordered packet received
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 183.808685,  type: 0, timerinterrupt   entity: 0
+Time interrupt occur
+Timeout! Send out the package again
+Timeout! Send out the package again
+Timeout! Send out the package again
+Timeout! Send out the package again
+          TOLAYER3: packet being lost
+Timeout! Send out the package again
+          TOLAYER3: packet being corrupted
+Timeout! Send out the package again
+Timeout! Send out the package again
+
+EVENT time: 184.073212,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+Receive duplicate ACK
+
+EVENT time: 187.433533,  type: 1, fromlayer5  entity: 0
+................. Inside  A_output...............
+window is full
+
+EVENT time: 192.278152,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Disordered packet received
+          TOLAYER3: packet being lost
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 195.540192,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Disordered packet received
+          TOLAYER3: packet being lost
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 196.750793,  type: 1, fromlayer5  entity: 0
+................. Inside  A_output...............
+window is full
+
+EVENT time: 198.302246,  type: 1, fromlayer5  entity: 0
+................. Inside  A_output...............
+window is full
+
+EVENT time: 202.340668,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Disordered packet received
+          TOLAYER3: packet being corrupted
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 203.808685,  type: 0, timerinterrupt   entity: 0
+Time interrupt occur
+Timeout! Send out the package again
+          TOLAYER3: packet being lost
+Timeout! Send out the package again
+          TOLAYER3: packet being lost
+Timeout! Send out the package again
+Timeout! Send out the package again
+          TOLAYER3: packet being lost
+Timeout! Send out the package again
+          TOLAYER3: packet being corrupted
+Timeout! Send out the package again
+          TOLAYER3: packet being lost
+Timeout! Send out the package again
+          TOLAYER3: packet being corrupted
+
+EVENT time: 204.759033,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Send packet to layer5
+          TOLAYER3: packet being lost
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 206.771652,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+ACK packet is corrupted
+Receive duplicate ACK
+
+EVENT time: 207.773880,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Send packet to layer5
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 213.506927,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Send packet to layer5
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 216.487396,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+calling A_output to send extra buffer message
+................. Inside  A_output...............
+          TOLAYER3: packet being lost
+Send packet to layer3
+.................Outside A_output..............
+calling A_output to send extra buffer message
+................. Inside  A_output...............
+          TOLAYER3: packet being corrupted
+Send packet to layer3
+.................Outside A_output..............
+5 ACK packet process successfully accomplished
+........Outside A_input........
+
+EVENT time: 217.378265,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Packet is corrupted
+
+EVENT time: 218.615097,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+calling A_output to send extra buffer message
+................. Inside  A_output...............
+Send packet to layer3
+.................Outside A_output..............
+6 ACK packet process successfully accomplished
+........Outside A_input........
+
+EVENT time: 221.503235,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Disordered packet received
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 228.122131,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+Receive duplicate ACK
+
+EVENT time: 231.428665,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Disordered packet received
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 232.966171,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Duplicated packet detected
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 238.585068,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+Receive duplicate ACK
+
+EVENT time: 238.615097,  type: 0, timerinterrupt   entity: 0
+Time interrupt occur
+Timeout! Send out the package again
+Timeout! Send out the package again
+Timeout! Send out the package again
+Timeout! Send out the package again
+Timeout! Send out the package again
+Timeout! Send out the package again
+          TOLAYER3: packet being lost
+Timeout! Send out the package again
+
+EVENT time: 238.647476,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Packet is corrupted
+
+EVENT time: 240.494675,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Packet is corrupted
+
+EVENT time: 242.761581,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+Receive duplicate ACK
+
+EVENT time: 247.668930,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Packet is corrupted
+
+EVENT time: 253.464462,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Disordered packet received
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 256.974518,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Send packet to layer5
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 258.615112,  type: 0, timerinterrupt   entity: 0
+Time interrupt occur
+Timeout! Send out the package again
+Timeout! Send out the package again
+          TOLAYER3: packet being lost
+Timeout! Send out the package again
+Timeout! Send out the package again
+Timeout! Send out the package again
+          TOLAYER3: packet being corrupted
+Timeout! Send out the package again
+Timeout! Send out the package again
+
+EVENT time: 260.301941,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+Receive duplicate ACK
+
+EVENT time: 261.331757,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Send packet to layer5
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 263.758331,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+calling A_output to send extra buffer message
+................. Inside  A_output...............
+Send packet to layer3
+.................Outside A_output..............
+7 ACK packet process successfully accomplished
+........Outside A_input........
+
+EVENT time: 264.805176,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+calling A_output to send extra buffer message
+................. Inside  A_output...............
+          TOLAYER3: packet being lost
+Send packet to layer3
+.................Outside A_output..............
+8 ACK packet process successfully accomplished
+........Outside A_input........
+
+EVENT time: 267.399109,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Send packet to layer5
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 269.301544,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Send packet to layer5
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 269.859131,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+calling A_output to send extra buffer message
+................. Inside  A_output...............
+Send packet to layer3
+.................Outside A_output..............
+9 ACK packet process successfully accomplished
+........Outside A_input........
+
+EVENT time: 275.426270,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+calling A_output to send extra buffer message
+................. Inside  A_output...............
+          TOLAYER3: packet being lost
+Send packet to layer3
+.................Outside A_output..............
+10 ACK packet process successfully accomplished
+........Outside A_input........
+
+EVENT time: 275.964508,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Send packet to layer5
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 278.006470,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Disordered packet received
+          TOLAYER3: packet being lost
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 278.181335,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+calling A_output to send extra buffer message
+................. Inside  A_output...............
+          TOLAYER3: packet being lost
+Send packet to layer3
+.................Outside A_output..............
+11 ACK packet process successfully accomplished
+........Outside A_input........
+
+EVENT time: 287.619263,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Duplicated packet detected
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 289.752899,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+Receive duplicate ACK
+
+EVENT time: 292.792816,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Duplicated packet detected
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 296.098999,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Duplicated packet detected
+          TOLAYER3: packet being lost
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 297.556885,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Packet is corrupted
+
+EVENT time: 298.181335,  type: 0, timerinterrupt   entity: 0
+Time interrupt occur
+Timeout! Send out the package again
+Timeout! Send out the package again
+Timeout! Send out the package again
+Timeout! Send out the package again
+Timeout! Send out the package again
+          TOLAYER3: packet being corrupted
+Timeout! Send out the package again
+Timeout! Send out the package again
+          TOLAYER3: packet being corrupted
+
+EVENT time: 298.480164,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+Receive duplicate ACK
+
+EVENT time: 302.110596,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Send packet to layer5
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 307.581421,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+12 ACK packet process successfully accomplished
+........Outside A_input........
+
+EVENT time: 311.250641,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Send packet to layer5
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 314.325470,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+13 ACK packet process successfully accomplished
+........Outside A_input........
+
+EVENT time: 319.222931,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Send packet to layer5
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 322.403870,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+14 ACK packet process successfully accomplished
+........Outside A_input........
+
+EVENT time: 326.174683,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Disordered packet received
+          TOLAYER3: packet being corrupted
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 331.641327,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+ACK packet is corrupted
+Receive duplicate ACK
+
+EVENT time: 331.687775,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Duplicated packet detected
+          TOLAYER3: packet being lost
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 333.327454,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Duplicated packet detected
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 339.278900,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Duplicated packet detected
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 342.403870,  type: 0, timerinterrupt   entity: 0
+Time interrupt occur
+Timeout! Send out the package again
+Timeout! Send out the package again
+          TOLAYER3: packet being lost
+Timeout! Send out the package again
+          TOLAYER3: packet being corrupted
+Timeout! Send out the package again
+
+EVENT time: 342.470276,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+Receive duplicate ACK
+
+EVENT time: 346.690369,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Send packet to layer5
+          TOLAYER3: packet being lost
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 349.024567,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+Receive duplicate ACK
+
+EVENT time: 349.668976,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Packet is corrupted
+
+EVENT time: 356.796265,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Disordered packet received
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 362.403870,  type: 0, timerinterrupt   entity: 0
+Time interrupt occur
+Timeout! Send out the package again
+Timeout! Send out the package again
+Timeout! Send out the package again
+          TOLAYER3: packet being corrupted
+Timeout! Send out the package again
+          TOLAYER3: packet being lost
+
+EVENT time: 363.327240,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+15 ACK packet process successfully accomplished
+........Outside A_input........
+
+EVENT time: 365.140381,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Packet is corrupted
+
+EVENT time: 373.673248,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Duplicated packet detected
+          TOLAYER3: packet being lost
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 378.632050,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Packet is corrupted
+
+EVENT time: 381.934967,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Disordered packet received
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 383.327240,  type: 0, timerinterrupt   entity: 0
+Time interrupt occur
+Timeout! Send out the package again
+          TOLAYER3: packet being lost
+Timeout! Send out the package again
+          TOLAYER3: packet being lost
+Timeout! Send out the package again
+
+EVENT time: 390.944519,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Duplicated packet detected
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 391.350891,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+Receive duplicate ACK
+
+EVENT time: 395.773010,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+Receive duplicate ACK
+
+EVENT time: 397.260010,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Send packet to layer5
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 403.327240,  type: 0, timerinterrupt   entity: 0
+Time interrupt occur
+Timeout! Send out the package again
+Timeout! Send out the package again
+Timeout! Send out the package again
+
+EVENT time: 403.985046,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+16 ACK packet process successfully accomplished
+........Outside A_input........
+
+EVENT time: 404.755737,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Packet is corrupted
+
+EVENT time: 414.219055,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Disordered packet received
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 422.099457,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+Receive duplicate ACK
+
+EVENT time: 422.464539,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Duplicated packet detected
+          TOLAYER3: packet being lost
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 423.985046,  type: 0, timerinterrupt   entity: 0
+Time interrupt occur
+Timeout! Send out the package again
+          TOLAYER3: packet being corrupted
+Timeout! Send out the package again
+
+EVENT time: 428.045349,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Send packet to layer5
+          TOLAYER3: packet being corrupted
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 431.582092,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+ACK packet is corrupted
+17 ACK packet process successfully accomplished
+........Outside A_input........
+
+EVENT time: 438.000122,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Send packet to layer5
+Send ACK packet to layer3
+....... Outside  B_input......
+
+EVENT time: 440.596222,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Packet is corrupted
+
+EVENT time: 441.228760,  type: 2, fromlayer3  entity: 0
+.......Inside A_input........
+Receive ACK packet from layer3
+18 ACK packet process successfully accomplished
+........Outside A_input........
+
+EVENT time: 442.518524,  type: 2, fromlayer3  entity: 1
+........inside  B_input.......
+Receive a packet from layer3
+Duplicated packet detected
+          TOLAYER3: packet being lost
+Send ACK packet to layer3
+....... Outside  B_input......
+ Simulator terminated at time 442.518524
+ after sending 20 msgs from layer5
+
+[0] of messages still left in extra buffer of Sender A
+Report:
+20 of Packets sent from the Application Layer of Sender A
+100 of Packets sent from the Transport Layer of Sender A
+76 Packets received at the Transport layer of Receiver B
+20 of Packets received at the Application layer of Receiver B
+18 Packets are acknowledged
